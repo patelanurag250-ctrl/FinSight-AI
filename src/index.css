@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0B1020;
+    --bg-secondary: #111827;
+    --card-bg: #172033;
+    --surface-elevated: #1E293B;
+    --accent-primary: #10B981;
+    --accent-sky: #38BDF8;
+    --accent-ai: #8B5CF6;
+    --border-color: #293548;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+  }
+
+  .light {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #F1F5F9;
+    --card-bg: #FFFFFF;
+    --surface-elevated: #E2E8F0;
+    --accent-primary: #059669;
+    --accent-sky: #0284C7;
+    --accent-ai: #7C3AED;
+    --border-color: #CBD5E1;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glassmorphism and glow effects */
+.glass-panel {
+  background: rgba(23, 32, 51, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(41, 53, 72, 0.8);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+}
+
+.card-glow-emerald:hover {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.card-glow-violet:hover {
+  box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+}

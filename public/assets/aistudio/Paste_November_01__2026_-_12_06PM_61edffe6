@@ -1,0 +1,983 @@
+# MASTER PROJECT PROMPT — FINSIGHT AI
+## Build a Premium, Production-Ready AI-Powered Personal Finance & Spending Analytics Platform
+
+Act as a senior full-stack software architect, UI/UX designer, AI/ML engineer, database engineer, and security engineer.
+
+Build a complete, modern, production-quality personal finance management platform named **FinSight AI**.
+
+This must not look or behave like a basic college project, dashboard template, or simple expense tracker. It should feel like a premium commercial SaaS product that real users can depend on for managing their everyday finances.
+
+The application will be used by multiple real users, including my friends, after deployment. Therefore, prioritize reliability, security, usability, performance, scalability, and exceptional visual design.
+
+Do not just generate a frontend mockup. Build a complete full-stack application with functional features, database integration, backend APIs, AI capabilities, and machine learning functionality.
+
+---
+
+# 1. PROJECT OVERVIEW
+
+**Product Name:** FinSight AI
+
+**Tagline:** Understand Your Money. Control Your Future.
+
+**Product Type:** AI-Powered Personal Finance Management & Spending Analytics Platform.
+
+**Primary Objective:**
+
+Help users manage their personal finances by tracking income and expenses, managing budgets, analyzing spending patterns, predicting future expenses, identifying unusual transactions, and receiving personalized AI-powered financial insights.
+
+The application should allow users to:
+
+- Track income and expenses.
+- Manage multiple accounts and transactions.
+- Create monthly and category-wise budgets.
+- Analyze spending habits through interactive charts.
+- Predict future spending using machine learning.
+- Detect unusual financial transactions.
+- Generate personalized financial insights using Gemini AI.
+- Monitor savings goals.
+- Generate and download financial reports.
+- Import transactions from CSV files.
+- Manage recurring transactions.
+- Understand their overall financial health.
+
+---
+
+# 2. TECHNOLOGY STACK — STRICT REQUIREMENTS
+
+Use the following technologies.
+
+**Frontend:**
+- React.js
+- JavaScript ES6+
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Axios
+- Recharts
+- Lucide React
+- React Hook Form
+- Zod or an equivalent JavaScript validation library
+
+**Backend:**
+- Python
+- FastAPI
+- Pydantic
+- SQLAlchemy
+- Alembic
+- REST APIs
+- JWT Authentication
+
+**Database:**
+- PostgreSQL
+
+**Machine Learning:**
+- Python
+- Scikit-learn
+- Pandas
+- NumPy
+- Joblib
+
+**Generative AI:**
+- Google Gemini API
+- Use Gemini exclusively through secure backend API calls.
+- Never expose API keys in frontend code.
+
+**Additional Tools:**
+- Docker
+- Docker Compose
+- Pytest
+- Git
+- Environment variables using `.env`
+
+### Important Technology Restrictions
+
+1. Use JavaScript, NOT TypeScript.
+2. Do not create `.ts` or `.tsx` files.
+3. All React components must use `.jsx` or `.js`.
+4. Use Python for the backend and ML implementation.
+5. Do not replace PostgreSQL with localStorage or mock databases.
+6. Do not use hardcoded dummy data as the application's actual data source.
+7. Use proper database relationships and backend APIs.
+8. Every major feature must work end-to-end.
+
+---
+
+# 3. UI/UX DESIGN AND BRAND IDENTITY
+
+Design the platform with a premium fintech SaaS aesthetic.
+
+The application must look modern, elegant, minimal, trustworthy, and professional.
+
+Take inspiration from the design quality of modern fintech products such as Stripe, Linear, Ramp, and modern banking dashboards. Do not copy their branding or layouts.
+
+## Color Palette
+
+Use the following consistent design system:
+
+- Primary Background: `#0B1020`
+- Secondary Background: `#111827`
+- Card Background: `#172033`
+- Elevated Surface: `#1E293B`
+- Primary Accent: `#10B981` (Emerald Green)
+- Secondary Accent: `#38BDF8` (Sky Blue)
+- AI Accent: `#8B5CF6` (Violet)
+- Main Text: `#F8FAFC`
+- Secondary Text: `#94A3B8`
+- Positive Values: `#22C55E`
+- Negative Values: `#F87171`
+- Warning: `#FBBF24`
+- Borders: `#293548`
+
+Use emerald green for positive financial indicators, red for expenses or negative trends, blue for informational elements, and violet for AI-powered features.
+
+## Visual Style
+
+- Premium dark dashboard as the default theme.
+- Provide a fully functional light/dark mode toggle.
+- Use subtle gradients and soft shadows.
+- Use rounded cards with consistent spacing.
+- Use clean typography such as Inter or Geist.
+- Use smooth transitions and tasteful micro-interactions.
+- Use skeleton loaders during data fetching.
+- Use proper empty states and error states.
+- Use clear visual hierarchy.
+- Use responsive layouts for desktop, tablet, and mobile.
+- Use Lucide icons consistently.
+- Avoid excessive gradients, unnecessary animations, and clutter.
+
+The design must feel like a real fintech SaaS product, not a generic AI-generated dashboard.
+
+---
+
+# 4. AUTHENTICATION AND USER MANAGEMENT
+
+Implement complete authentication.
+
+Features:
+
+1. User registration.
+2. User login.
+3. User logout.
+4. Forgot password flow.
+5. Password reset flow.
+6. Secure password hashing using Argon2 or bcrypt.
+7. JWT-based authentication.
+8. Protected frontend routes.
+9. User profile management.
+10. Session expiration and secure refresh mechanism.
+
+Each user must have a completely separate financial workspace.
+
+**Critical multi-user security requirement:**
+
+- Users must only access their own accounts, transactions, budgets, reports, and AI insights.
+- Enforce ownership checks on the backend for every user-specific resource.
+- Never trust user IDs supplied by the frontend.
+- Derive the authenticated user identity from the verified access token.
+- Prevent insecure direct object reference vulnerabilities.
+- Add proper database constraints and authorization checks.
+
+Support multiple independent users using the same deployed application.
+
+---
+
+# 5. MAIN APPLICATION STRUCTURE
+
+Create the following pages and navigation.
+
+1. Landing Page
+2. Register
+3. Login
+4. Forgot Password
+5. Main Dashboard
+6. Transactions
+7. Accounts
+8. Budgets
+9. Analytics
+10. AI Financial Assistant
+11. Savings Goals
+12. Recurring Transactions
+13. Reports
+14. Notifications
+15. Profile and Settings
+
+Use a professional sidebar navigation on desktop and a suitable mobile navigation experience.
+
+The application should have a consistent layout across authenticated pages.
+
+---
+
+# 6. LANDING PAGE
+
+Create an impressive public landing page for FinSight AI.
+
+Sections:
+
+- Premium navigation bar.
+- Hero section with product name and tagline.
+- Strong headline: "Your Money, Made Intelligent."
+- Supporting description explaining the platform.
+- Get Started and Explore Features buttons.
+- Attractive dashboard preview.
+- Key feature highlights.
+- AI-powered financial intelligence section.
+- Analytics and forecasting section.
+- Security and privacy section.
+- Testimonials section with clearly identified sample/demo testimonials only.
+- Pricing section with a free plan and a premium plan presentation.
+- FAQ section.
+- Professional footer.
+
+Make the landing page visually impressive and conversion-focused.
+
+Do not make pricing or payment features functional unless properly implemented. The main application should remain usable without paid subscriptions.
+
+---
+
+# 7. MAIN DASHBOARD
+
+This is the most important page.
+
+Create a beautiful and information-rich dashboard.
+
+Display:
+
+### Financial Summary Cards
+
+- Total Balance
+- Total Income
+- Total Expenses
+- Monthly Savings
+- Savings Rate
+- Budget Utilization
+
+Each card should display:
+- Current value.
+- Comparison with the previous period.
+- Percentage change.
+- Appropriate trend indicator.
+- Small visual chart where useful.
+
+### Interactive Financial Charts
+
+Use Recharts.
+
+Implement:
+
+1. Income vs Expenses — Monthly Bar Chart.
+2. Expense Breakdown — Category-wise Donut Chart.
+3. Spending Trends — Area Chart.
+4. Monthly Savings — Line Chart.
+5. Budget Utilization — Progress Indicators.
+6. Cash Flow — Income and expense comparison.
+
+All charts must use real database data and update when transactions change.
+
+### Recent Transactions
+
+Show the latest transactions with:
+- Transaction title.
+- Category.
+- Account.
+- Date.
+- Amount.
+- Transaction type.
+
+Include a View All button.
+
+### AI Financial Insights
+
+Display a small section containing personalized insights generated by Gemini.
+
+### Quick Actions
+
+- Add Expense.
+- Add Income.
+- Create Budget.
+- Add Account.
+- Set Savings Goal.
+- Import CSV.
+
+Provide a customizable date range filter:
+- This Week
+- This Month
+- Last Month
+- Last 3 Months
+- This Year
+- Custom Range
+
+---
+
+# 8. TRANSACTION MANAGEMENT
+
+Build a complete transaction management system.
+
+Each transaction should contain:
+
+- Transaction ID.
+- Title.
+- Amount.
+- Transaction Type (Income/Expense).
+- Category.
+- Account.
+- Date.
+- Description.
+- Payment Method.
+- Merchant or Payee.
+- Tags.
+- Optional notes.
+
+Features:
+
+- Add transactions.
+- Edit transactions.
+- Delete transactions with confirmation.
+- View transaction details.
+- Search transactions.
+- Filter by category.
+- Filter by account.
+- Filter by transaction type.
+- Filter by date range.
+- Sort by date and amount.
+- Pagination.
+- Export transactions as CSV.
+
+Create a clean transaction table with useful filters.
+
+### Transaction Categories
+
+Provide default categories:
+
+**Income:**
+- Salary
+- Freelancing
+- Business
+- Investments
+- Interest
+- Other Income
+
+**Expenses:**
+- Food & Dining
+- Groceries
+- Transportation
+- Shopping
+- Rent
+- Utilities
+- Healthcare
+- Education
+- Entertainment
+- Travel
+- Subscriptions
+- Personal Care
+- EMI & Loans
+- Other Expenses
+
+Allow users to create custom categories.
+
+### CSV Import
+
+Implement a functional CSV upload system.
+
+Features:
+- Upload CSV.
+- Preview imported records.
+- Map CSV columns to application fields.
+- Validate rows.
+- Identify duplicate transactions.
+- Show invalid records.
+- Confirm before importing.
+- Display import summary.
+
+Never silently import invalid records.
+
+---
+
+# 9. ACCOUNT MANAGEMENT
+
+Allow users to create and manage multiple financial accounts.
+
+Account types:
+
+- Cash
+- Savings Account
+- Current Account
+- Credit Card
+- Digital Wallet
+- Other
+
+Each account should contain:
+
+- Account Name.
+- Account Type.
+- Opening Balance.
+- Current Balance.
+- Currency.
+- Description.
+
+Features:
+
+- Add account.
+- Edit account.
+- Delete account with appropriate checks.
+- View account-specific transactions.
+- Calculate current balance from opening balance and associated transactions.
+
+Do not claim to connect to banks automatically. This version should support manual accounts and manual transaction entry.
+
+---
+
+# 10. BUDGET MANAGEMENT
+
+Build a comprehensive budgeting system.
+
+Allow users to:
+
+- Create monthly budgets.
+- Create category-specific budgets.
+- Set spending limits.
+- Edit budgets.
+- Delete budgets.
+- Track actual spending.
+- Monitor remaining budget.
+
+For each budget show:
+
+- Budget Limit.
+- Amount Spent.
+- Remaining Amount.
+- Percentage Used.
+- Progress Bar.
+
+Implement intelligent alerts:
+
+- 50% budget consumed.
+- 75% budget consumed.
+- 90% budget consumed.
+- Budget exceeded.
+
+Allow users to configure alert thresholds.
+
+Display budget comparisons with previous months.
+
+---
+
+# 11. MACHINE LEARNING FEATURES
+
+Implement actual machine learning functionality using Python and Scikit-learn.
+
+Do not create fake ML results or merely display hardcoded predictions.
+
+## A. Automated Expense Categorization
+
+Train a classification model using transaction descriptions and available transaction features.
+
+Requirements:
+
+- Use a suitable text preprocessing pipeline.
+- Use TF-IDF for textual features.
+- Evaluate models such as Logistic Regression or Random Forest.
+- Select a model based on validation performance.
+- Save the trained model using Joblib.
+- Predict the most likely expense category.
+- Return prediction confidence.
+- Allow users to correct incorrect predictions.
+- Store corrected labels for future retraining.
+
+Do not claim 97%+ accuracy unless it is actually achieved on a properly separated test dataset.
+
+## B. Spending Prediction
+
+Build a spending forecasting model.
+
+Requirements:
+
+- Analyze historical monthly spending.
+- Predict expenses for the upcoming month.
+- Support category-wise predictions.
+- Display predicted spending with confidence or uncertainty ranges where statistically justified.
+- Compare predicted expenses with actual expenses.
+- Display prediction trends using charts.
+
+Do not produce misleading predictions when insufficient historical data is available.
+
+Clearly communicate when the model requires more transaction history.
+
+## C. Anomaly Detection
+
+Implement an anomaly detection model using Scikit-learn.
+
+Requirements:
+
+- Detect unusually large expenses.
+- Detect unusual transaction patterns.
+- Identify deviations from normal category spending.
+- Support models such as Isolation Forest.
+- Generate anomaly scores.
+- Display suspicious transactions for user review.
+
+Do not automatically label a transaction as fraudulent. Use language such as "Unusual Spending Detected" or "Needs Review."
+
+---
+
+# 12. GEMINI-POWERED AI FINANCIAL ASSISTANT
+
+Build a dedicated AI assistant page.
+
+The assistant should understand the user's financial data and provide contextual insights.
+
+Use the Gemini API securely from the backend.
+
+Features:
+
+### A. Personalized Financial Insights
+
+Generate insights based on:
+- Monthly income.
+- Monthly expenses.
+- Savings.
+- Category-wise spending.
+- Budget utilization.
+- Spending trends.
+- Recurring expenses.
+
+### B. Natural Language Questions
+
+Allow users to ask questions such as:
+
+- Where did I spend the most this month?
+- How much did I save this month?
+- Which category has increased the most?
+- Am I spending more than last month?
+- How much can I potentially save next month?
+- What are my biggest recurring expenses?
+- How can I reduce unnecessary spending?
+
+The assistant must answer using the authenticated user's actual financial data.
+
+### C. AI Recommendations
+
+Generate practical suggestions such as:
+
+- Identify high-spending categories.
+- Suggest realistic budget adjustments.
+- Highlight recurring expenses.
+- Identify potential savings opportunities.
+- Explain spending trends.
+
+### D. Financial Chat Interface
+
+Include:
+- Chat history.
+- Suggested questions.
+- Loading indicators.
+- Clear responses.
+- Conversation management.
+
+### AI SAFETY AND DATA PRIVACY
+
+- Never send another user's financial information to Gemini.
+- Send only the minimum relevant data needed for a request.
+- Do not expose API keys.
+- Do not make unsupported financial claims.
+- Do not provide guaranteed investment returns or personalized investment instructions.
+- Clearly distinguish observations from predictions and suggestions.
+- If financial data is insufficient, tell the user.
+
+The AI assistant should function as a financial education and budgeting assistant, not a licensed financial advisor.
+
+Provide a graceful fallback if the Gemini API key is unavailable.
+
+---
+
+# 13. SAVINGS GOALS
+
+Build a dedicated savings goal management system.
+
+Allow users to create goals such as:
+
+- Emergency Fund.
+- New Laptop.
+- Vacation.
+- Education.
+- Vehicle.
+- Personal Savings.
+
+Each goal should contain:
+
+- Goal Name.
+- Target Amount.
+- Current Saved Amount.
+- Target Date.
+- Description.
+
+Display:
+- Progress percentage.
+- Amount remaining.
+- Monthly contribution required.
+- Estimated completion date where sufficient data exists.
+
+Allow users to add contributions and track goal history.
+
+---
+
+# 14. RECURRING TRANSACTIONS
+
+Support recurring income and expenses.
+
+Examples:
+- Monthly Salary.
+- Rent.
+- Electricity Bill.
+- Internet Subscription.
+- EMI.
+- Streaming Subscription.
+
+Features:
+- Daily, weekly, monthly, and yearly recurrence.
+- Start date.
+- Optional end date.
+- Next occurrence.
+- Active/inactive status.
+- Upcoming payment reminders.
+
+Use a reliable backend scheduling mechanism for generating recurring transactions.
+
+Prevent duplicate transaction generation through idempotency checks.
+
+Do not depend on the frontend being open for scheduled processing.
+
+---
+
+# 15. ANALYTICS AND REPORTS
+
+Build an advanced financial analytics page.
+
+Include:
+
+- Monthly income analysis.
+- Monthly expense analysis.
+- Category-wise spending analysis.
+- Savings trends.
+- Month-over-month comparison.
+- Account-wise analysis.
+- Budget performance.
+- Recurring expense analysis.
+- Top spending categories.
+- Highest spending days.
+
+Provide date filters and interactive charts.
+
+### Report Generation
+
+Allow users to generate downloadable reports.
+
+Formats:
+- CSV.
+- PDF.
+
+Reports should include:
+- Selected date range.
+- Total income.
+- Total expenses.
+- Net savings.
+- Category-wise breakdown.
+- Account-wise breakdown.
+- Monthly trends.
+- Budget performance.
+
+Generate reports from actual database data.
+
+---
+
+# 16. NOTIFICATIONS AND ALERTS
+
+Implement an in-app notification system.
+
+Examples:
+
+- Budget nearing limit.
+- Budget exceeded.
+- Unusual spending detected.
+- Upcoming recurring payment.
+- Savings goal milestone reached.
+- Monthly financial summary available.
+
+Features:
+- Notification list.
+- Read/unread status.
+- Mark as read.
+- Clear notifications.
+- Notification timestamps.
+
+Avoid duplicate notifications for the same event.
+
+---
+
+# 17. DATABASE ARCHITECTURE
+
+Design a normalized PostgreSQL database.
+
+Create appropriate tables for:
+
+- users
+- user_profiles
+- accounts
+- transactions
+- categories
+- budgets
+- savings_goals
+- savings_contributions
+- recurring_transactions
+- notifications
+- ai_conversations
+- ai_messages
+- imported_files
+- ML prediction records where appropriate
+
+Requirements:
+
+- Use UUID primary keys where appropriate.
+- Add foreign key constraints.
+- Add indexes for frequently queried fields.
+- Add created_at and updated_at timestamps.
+- Add database-level ownership relationships.
+- Use SQLAlchemy models.
+- Use Alembic migrations.
+- Handle transaction consistency.
+- Avoid unnecessary duplication of financial data.
+
+All monetary calculations must use appropriate decimal precision. Do not use floating-point arithmetic for financial balances.
+
+Support INR (₹) as the default currency, with currency formatting and a structure that can support other currencies later.
+
+---
+
+# 18. SECURITY AND RELIABILITY
+
+Treat this as an application that will handle real users' private financial information.
+
+Implement:
+
+- Secure password hashing.
+- JWT authentication.
+- Secure token handling.
+- Backend authorization on every protected endpoint.
+- Input validation.
+- SQL injection protection through ORM usage.
+- CORS configuration.
+- Rate limiting for authentication and AI endpoints.
+- Secure environment variable management.
+- File upload validation.
+- File size restrictions.
+- CSV validation.
+- Proper exception handling.
+- Safe logging without sensitive financial information.
+- API request validation.
+- Protection against unauthorized resource access.
+- Database backups and documented backup/restore procedure.
+
+Never store plaintext passwords.
+
+Never expose secrets in GitHub.
+
+Never put Gemini API keys in frontend environment variables.
+
+Do not log sensitive user transactions or credentials.
+
+---
+
+# 19. PERFORMANCE AND USER EXPERIENCE
+
+The platform should feel fast and responsive.
+
+Implement:
+
+- Pagination for large transaction lists.
+- Database indexing.
+- Efficient API queries.
+- Lazy loading where appropriate.
+- Loading skeletons.
+- Debounced search.
+- Optimized charts.
+- Responsive layouts.
+- Proper form validation.
+- Helpful error messages.
+- Confirmation dialogs for destructive operations.
+- Toast notifications for successful actions.
+- Graceful API failure handling.
+
+Avoid unnecessary API calls and duplicate database queries.
+
+---
+
+# 20. DEPLOYMENT AND DEVOPS
+
+Prepare the complete application for deployment.
+
+Create:
+
+- Frontend Dockerfile.
+- Backend Dockerfile.
+- Docker Compose configuration.
+- PostgreSQL service configuration.
+- `.env.example`.
+- Database migration commands.
+- Production build configuration.
+- Health-check endpoints.
+- README with setup and deployment instructions.
+
+The application should be deployable using a suitable frontend hosting provider, backend hosting provider, and managed PostgreSQL database.
+
+Document possible deployment options such as:
+
+- Frontend: Vercel.
+- Backend: Render or Railway.
+- Database: Neon or Supabase PostgreSQL.
+
+Ensure that the deployment configuration supports production environment variables and secure API communication.
+
+---
+
+# 21. PROJECT STRUCTURE
+
+Use a clean, modular structure similar to the following:
+
+finsight-ai/
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── layouts/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   ├── context/
+│   │   ├── utils/
+│   │   ├── charts/
+│   │   └── assets/
+│   ├── public/
+│   ├── package.json
+│   └── Dockerfile
+│
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── core/
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   ├── ml/
+│   │   ├── ai/
+│   │   ├── utils/
+│   │   └── main.py
+│   ├── migrations/
+│   ├── tests/
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+├── docker-compose.yml
+├── .env.example
+├── .gitignore
+└── README.md
+
+You may improve the structure if necessary, but maintain separation of concerns and modularity.
+
+---
+
+# 22. TESTING REQUIREMENTS
+
+Create meaningful automated tests.
+
+Backend:
+- Authentication tests.
+- User authorization tests.
+- Transaction CRUD tests.
+- Account balance calculation tests.
+- Budget calculation tests.
+- CSV import validation tests.
+- ML prediction tests.
+- AI endpoint tests with mocked external API responses.
+
+Frontend:
+- Important component tests.
+- Form validation tests.
+- Authentication flow tests.
+- Dashboard rendering tests.
+
+Test critical multi-user isolation scenarios.
+
+Verify that User A cannot access User B's accounts, transactions, budgets, reports, or AI conversations.
+
+---
+
+# 23. SAMPLE DATA AND FIRST-TIME EXPERIENCE
+
+Create an optional demo mode with clearly labeled sample data.
+
+For new users:
+- Provide a clean onboarding flow.
+- Let users configure their currency.
+- Allow them to create their first account.
+- Explain how to add their first transaction.
+- Offer optional sample data to explore the dashboard.
+
+Do not mix demo data with real user data.
+
+Do not create fake financial performance metrics.
+
+---
+
+# 24. IMPLEMENTATION STRATEGY
+
+Build the project in a structured manner.
+
+Recommended development sequence:
+
+1. Establish the project architecture and frontend design system.
+2. Build authentication and PostgreSQL integration.
+3. Implement account and transaction management.
+4. Implement budgets and recurring transactions.
+5. Build the dashboard and analytics.
+6. Integrate the machine learning models.
+7. Integrate Gemini-powered AI functionality.
+8. Build savings goals, notifications, and reports.
+9. Implement security, tests, and performance improvements.
+10. Prepare deployment and documentation.
+
+At every stage:
+- Ensure that the code runs.
+- Use real backend integration.
+- Avoid broken buttons and placeholder pages.
+- Maintain consistent styling.
+- Handle loading and error states.
+- Keep the application modular and maintainable.
+
+If the complete application cannot fit in one generation, create it in well-defined phases while preserving the architecture and working code from earlier phases. Do not silently omit features or replace them with static mockups.
+
+---
+
+# 25. FINAL QUALITY EXPECTATIONS
+
+The final result must satisfy these requirements:
+
+1. A visually exceptional, premium fintech interface.
+2. A fully functional React + JavaScript frontend.
+3. A working Python FastAPI backend.
+4. PostgreSQL database integration.
+5. Secure multi-user authentication and data isolation.
+6. Functional transaction and account management.
+7. Working budgeting and savings goal features.
+8. Actual Scikit-learn-based ML models.
+9. Gemini-powered personalized financial assistance.
+10. Interactive analytics and forecasting.
+11. Downloadable reports.
+12. Secure CSV import.
+13. Automated tests.
+14. Docker-based local setup.
+15. Complete deployment documentation.
+
+Do not sacrifice functionality for visual appearance, or visual quality for functionality.
+
+The most important priority is to create a platform that real people can comfortably use every day to understand and manage their finances.
+
+**Build FinSight AI as a serious, polished, scalable fintech product — not just a demonstration project.**

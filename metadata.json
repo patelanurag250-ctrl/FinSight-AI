@@ -1,0 +1,8 @@
+{
+  "name": "FinSight AI",
+  "description": "Understand Your Money. Control Your Future. Premium AI-powered personal finance management and spending analytics platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
